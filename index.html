@@ -106,7 +106,8 @@
 
     <script>
         function searchenter(keycode) {
-            if (keycode == 13) {
+            var searchword = document.getElementById('search').value;
+            if (keycode == 13 && searchword != "") {
                 search();
             } else {
 
@@ -115,16 +116,17 @@
 
         function search(keycode) {
             var searchword = document.getElementById('search').value;
-            var googlesearchword = document.getElementById('google').value;
-            var element = document.getElementById('google');
-            element.innerHTML = "<a id= \"googlesearch\" href=\"https://www.google.co.jp/search?q=" + searchword + "\" target=\"_blank\">google-" + searchword + "</a><br>";
 
-            var element = document.getElementById('twitter');
-            element.innerHTML = "<a id= \"twittersearch\" href=\"https://twitter.com/search?q=" + searchword + "&src=typed_query\" target=\"_blank\">twitter-" + searchword + "</a><br>";
+            if (searchword != "") {
+                var element = document.getElementById('google');
+                element.innerHTML = "<a id= \"googlesearch\" href=\"https://www.google.co.jp/search?q=" + searchword + "\" target=\"_blank\">google-" + searchword + "</a><br>";
 
-            var element = document.getElementById('instagram');
-            element.innerHTML = "<a id= \"instagramsearch\" href=\"https://www.instagram.com/explore/tags/" + searchword + "/?hl=ja\" target=\"_blank\">instagram-" + searchword + "</a><br>";
+                var element = document.getElementById('twitter');
+                element.innerHTML = "<a id= \"twittersearch\" href=\"https://twitter.com/search?q=" + searchword + "&src=typed_query\" target=\"_blank\">twitter-" + searchword + "</a><br>";
 
+                var element = document.getElementById('instagram');
+                element.innerHTML = "<a id= \"instagramsearch\" href=\"https://www.instagram.com/explore/tags/" + searchword + "/?hl=ja\" target=\"_blank\">instagram-" + searchword + "</a><br>";
+            }
         }
     </script>
     <p id="title">Google twitter instagram 纏めて検索</p>
