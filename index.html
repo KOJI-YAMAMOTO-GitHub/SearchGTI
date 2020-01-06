@@ -8,7 +8,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100445243-8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'UA-100445243-8');
     </script>
@@ -69,7 +69,10 @@
             margin-right: auto;
             margin-left: auto;
         }
-        #google,#twitter,#instagram {
+
+        #google,
+        #twitter,
+        #instagram {
             margin-top: 30px;
 
         }
@@ -94,27 +97,33 @@
             /*タブレット用*/
         }
 
-        @media screen and (max-width: 479px) {
-
-        }
+        @media screen and (max-width: 479px) {}
     </style>
 
 </head>
 
-<body>
+<body onkeypress="searchenter(event.keyCode)">
 
     <script>
-        function search() {
-            var searchword = document.getElementById('search').value;
+        function searchenter(keycode) {
+            if (keycode == 13) {
+                search();
+            } else {
 
+            }
+        }
+
+        function search(keycode) {
+            var searchword = document.getElementById('search').value;
+            var googlesearchword = document.getElementById('google').value;
             var element = document.getElementById('google');
-            element.innerHTML = "<a href=\"https://www.google.co.jp/search?q=" + searchword + "\" target=\"_blank\">google-" + searchword + "</a><br>";
+            element.innerHTML = "<a id= \"googlesearch\" href=\"https://www.google.co.jp/search?q=" + searchword + "\" target=\"_blank\">google-" + searchword + "</a><br>";
 
             var element = document.getElementById('twitter');
-            element.innerHTML = "<a href=\"https://twitter.com/search?q=" + searchword + "&src=typed_query\" target=\"_blank\">twitter-" + searchword + "</a><br>";
+            element.innerHTML = "<a id= \"twittersearch\" href=\"https://twitter.com/search?q=" + searchword + "&src=typed_query\" target=\"_blank\">twitter-" + searchword + "</a><br>";
 
             var element = document.getElementById('instagram');
-            element.innerHTML = "<a href=\"https://www.instagram.com/explore/tags/" + searchword + "/?hl=ja\" target=\"_blank\">instagram-" + searchword + "</a><br>";
+            element.innerHTML = "<a id= \"instagramsearch\" href=\"https://www.instagram.com/explore/tags/" + searchword + "/?hl=ja\" target=\"_blank\">instagram-" + searchword + "</a><br>";
 
         }
     </script>
