@@ -1,24 +1,133 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta charset="utf-8">
-<title></title>
-<meta name="description" content="">
-<meta name="author" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="">
-<!--[if lt IE 9]>
-<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-<link rel="shortcut icon" href="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>Google twitter instagram 纏めて検索</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            font-family: "Nico Moji";
+        }
+
+        #title {
+            color: #FF8C00;
+            /*非対応のブラウザでの文字色を設定*/
+            background: -webkit-linear-gradient(0deg, rgb(166, 248, 177), rgb(0, 119, 255), rgb(171, 0, 251), rgb(10, 9, 10));
+            /*背景色にグラデーションを指定*/
+            -webkit-background-clip: text;
+            /*テキストでくり抜く*/
+            -webkit-text-fill-color: transparent;
+            /*くり抜いた部分は背景を表示*/
+            font-size: 3vw;
+            margin: 5px;
+        }
+
+        #search {
+            height: 40px;
+            width: 30vw;
+            font-size: 2vw;
+        }
+
+        #searchresult {
+            height: 40px;
+            width: 30vw;
+            font-size: 2vw;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        #btn {
+            width: 30vw;
+            height: 30px;
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            background: #668ad8;
+            /*ボタン色*/
+            color: #FFF;
+            border-bottom: solid 4px #627295;
+            border-radius: 3px;
+        }
+
+        #btn:active {
+            /*ボタンを押したとき*/
+            -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+            /*下に動く*/
+            box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+            /*影を小さく*/
+            border-bottom: none;
+        }
+
+        @keyframes fade-in3 {
+            0% {
+                opacity: 0;
+                transform: translate3d(0, 20px, 0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @media screen and (min-width: 767px) {
+            /*PC用*/
+        }
+
+        @media screen and (max-width: 767px) {
+            /*タブレット用*/
+        }
+
+        @media screen and (max-width: 479px) {
+
+            /*スマホ用*/
+            /*
+            #car-ul {
+                list-style: none;
+                display: -webkit-flex;
+                display: block;
+                -webkit-justify-content: space-around;
+                justify-content: space-around;
+            }
+*/
+            img {
+                width: 26.5vw;
+            }
+        }
+    </style>
+
 </head>
+
 <body>
 
-<!-- コンテンツを配置 -->
+    <script>
+        function search() {
+            var searchword = document.getElementById('search').value;
 
-<!-- SCRIPTS -->
-<!-- Example: <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+            var element = document.getElementById('google');
+            element.innerHTML = "<a href=\"https://www.google.co.jp/search?q=" + searchword + "\" target=\"_blank\">google-" + searchword + "</a><br>";
+
+            var element = document.getElementById('twitter');
+            element.innerHTML = "<a href=\"https://twitter.com/search?q=" + searchword + "&src=typed_query\" target=\"_blank\">twitter-" + searchword + "</a><br>";
+
+            var element = document.getElementById('instagram');
+            element.innerHTML = "<a href=\"https://www.instagram.com/explore/tags/" + searchword + "/?hl=ja\" target=\"_blank\">instagram-" + searchword + "</a><br>";
+
+        }
+    </script>
+    <p id="title">Google twitter instagram 纏めて検索</p>
+    <input type="search" name="search" id="search" placeholder="キーワードを入力"><br>
+    <p id="btn" onclick="search()">SEARCH</p>
+
+
+    <div id="searchresult">
+        <div id="google"></div>
+        <div id="twitter"></div>
+        <div id="instagram"></div>
+    </div>
 </body>
+
 </html>
