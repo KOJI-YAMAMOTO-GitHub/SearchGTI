@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <title>Google twitter instagram 纏めて検索</title>
+    <title>Google twitter instagram Search</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100445243-8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -12,6 +12,7 @@
         gtag('js', new Date());
         gtag('config', 'UA-100445243-8');
     </script>
+
     <style type="text/css">
         body {
             text-align: center;
@@ -19,37 +20,40 @@
         }
 
         #title {
-            color: #FF8C00;
-            /*非対応のブラウザでの文字色を設定*/
-            background: -webkit-linear-gradient(0deg, rgb(166, 248, 177), rgb(0, 119, 255), rgb(171, 0, 251), rgb(10, 9, 10));
-            /*背景色にグラデーションを指定*/
-            -webkit-background-clip: text;
-            /*テキストでくり抜く*/
-            -webkit-text-fill-color: transparent;
-            /*くり抜いた部分は背景を表示*/
+            color: rgb(218, 214, 214);
+            text-shadow: -2px -2px 2px #000000, 1px 1px #ffffff;
             font-size: 3vw;
             margin: 5px;
         }
 
         #search {
             height: 50px;
-            width: 70vw;
             font-size: 30px;
             text-align: center;
+            color: rgb(218, 214, 214);
+            text-shadow: -2px -2px 2px #000000, 1px 1px #ffffff;
+            margin: 5px;
+            border-radius: 100px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+            background-color: white;
+            border:0px;
+
+        }
+        #search:focus {
+            outline: none;
+           background-color: white;
+           border:0px;
+
         }
 
         #btn {
-            font-size: 30px;
-            width: 60vw;
-            height: 30px;
-            display: inline-block;
-            padding: 0.5em 1em;
-            text-decoration: none;
-            background: #668ad8;
-            /*ボタン色*/
-            color: #FFF;
-            border-bottom: solid 4px #627295;
-            border-radius: 3px;
+            border-radius: 100px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+            top: 0;
+            transition: .2s all;
+            font-size: 2vw;
+            color: rgb(218, 214, 214);
+            text-shadow: -2px -2px 2px #000000, 1px 1px #ffffff;
         }
 
         #btn:active {
@@ -64,7 +68,6 @@
 
         #searchresult {
             height: 40px;
-            width: 90vw;
             font-size: 30px;
             margin-right: auto;
             margin-left: auto;
@@ -75,6 +78,14 @@
         #instagram {
             margin-top: 30px;
 
+        }
+
+        a:link,
+        a:visited {
+            color: rgb(218, 214, 214);
+            text-shadow: -2px -2px 2px #000000, 1px 1px #ffffff;
+            font-size: 3vw;
+            margin: 5px;
         }
 
         @keyframes fade-in3 {
@@ -90,7 +101,13 @@
         }
 
         @media screen and (min-width: 767px) {
+
             /*PC用*/
+            body {
+                width: 1000px;
+                margin-right: auto;
+                margin-left: auto;
+            }
         }
 
         @media screen and (max-width: 767px) {
@@ -119,18 +136,18 @@
 
             if (searchword != "") {
                 var element = document.getElementById('google');
-                element.innerHTML = "<a id= \"googlesearch\" href=\"https://www.google.co.jp/search?q=" + searchword + "\" target=\"_blank\">google-" + searchword + "</a><br>";
+                element.innerHTML = "<a id= \"googlesearch\" href=\"https://www.google.co.jp/search?q=" + searchword + "\" target=\"_blank\">google : " + searchword + "</a><br>";
 
                 var element = document.getElementById('twitter');
-                element.innerHTML = "<a id= \"twittersearch\" href=\"https://twitter.com/search?q=" + searchword + "&src=typed_query\" target=\"_blank\">twitter-" + searchword + "</a><br>";
+                element.innerHTML = "<a id= \"twittersearch\" href=\"https://twitter.com/search?q=" + searchword + "&src=typed_query\" target=\"_blank\">twitter : " + searchword + "</a><br>";
 
                 var element = document.getElementById('instagram');
-                element.innerHTML = "<a id= \"instagramsearch\" href=\"https://www.instagram.com/explore/tags/" + searchword + "/?hl=ja\" target=\"_blank\">instagram-" + searchword + "</a><br>";
+                element.innerHTML = "<a id= \"instagramsearch\" href=\"https://www.instagram.com/explore/tags/" + searchword + "/?hl=ja\" target=\"_blank\">instagram : " + searchword + "</a><br>";
             }
         }
     </script>
-    <p id="title">Google twitter instagram 纏めて検索</p>
-    <input type="search" name="search" id="search" placeholder="キーワードを入力"><br>
+    <p id="title">Google twitter instagram Search</p>
+    <input type="search" name="search" id="search" placeholder="Search Word" autofocus><br>
     <p id="btn" onclick="search()">SEARCH</p>
 
 
