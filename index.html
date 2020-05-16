@@ -147,11 +147,14 @@
 
                 var element = document.getElementById('instagram');
                 element.innerHTML = "<a id= \"instagramsearch\" href=\"https://www.instagram.com/explore/tags/" + searchword + "/?hl=ja\" target=\"_blank\">instagram : " + searchword + "</a><br>";
+
+                var element = document.getElementById('youtube');
+                element.innerHTML = "<a id= \"youtubesearch\" href=\"https://www.youtube.com/results?search_query=" + searchword + "" target=\"_blank\">youtube : " + searchword + "</a><br>";
             }
         }
     </script>
     <div id="main">
-        <p id="title">Google twitter instagram Search</p>
+        <p id="title">Google twitter instagram youtube Search</p>
         <input type="search" name="search" id="search" placeholder="Search Word" autofocus><br>
         <p id="btn" onclick="search()">SEARCH</p>
     </div>
@@ -160,6 +163,7 @@
         <div id="google"></div>
         <div id="twitter"></div>
         <div id="instagram"></div>
+        <div id="youtube"></div>
     </div>
 </body>
 
