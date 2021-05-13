@@ -82,7 +82,7 @@
         #google,
         #twitter,
         #instagram {
-            margin-top: 30px;
+            /* margin-top: 30px; */
 
         }
 
@@ -184,17 +184,20 @@
             var searchword = document.getElementById('search').value;
 
             if (searchword != "") {
-                var element = document.getElementById('google');
-                element.innerHTML = "<a id= \"googlesearch\" href=\"https://www.google.co.jp/search?q=" + searchword + "\" target=\"_blank\">google : " + searchword + "</a><br>";
+                var element1 = document.getElementById('google');
+                element1.innerHTML = "<a id= \"googlesearch\" href=\"https://www.google.co.jp/search?q=" + searchword + "\" target=\"_blank\">google : " + searchword + "</a>";
 
-                var element = document.getElementById('twitter');
-                element.innerHTML = "<a id= \"twittersearch\" href=\"https://twitter.com/search?q=" + searchword + "&src=typed_query\" target=\"_blank\">twitter : " + searchword + "</a><br>";
+                var element2 = document.getElementById('twitter');
+                element2.innerHTML = "<a id= \"twittersearch\" href=\"https://twitter.com/search?q=" + searchword + "&src=typed_query\" target=\"_blank\">twitter : " + searchword + "</a>";
 
-                var element = document.getElementById('instagram');
-                element.innerHTML = "<a id= \"instagramsearch\" href=\"https://www.instagram.com/explore/tags/" + searchword + "/?hl=ja\" target=\"_blank\">instagram : " + searchword + "</a><br>";
+                var element3 = document.getElementById('instagram');
+                element3.innerHTML = "<a id= \"instagramsearch\" href=\"https://www.instagram.com/explore/tags/" + searchword + "/?hl=ja\" target=\"_blank\">instagram : " + searchword + "</a>";
 
-                var element = document.getElementById('youtube');
-                element.innerHTML = "<a id= \"youtubesearch\" href=\"https://www.youtube.com/results?search_query=" + searchword + "\" target=\"_blank\">youtube : " + searchword + "</a><br>";
+                var element4 = document.getElementById('youtube');
+                element4.innerHTML = "<a id= \"youtubesearch\" href=\"https://www.youtube.com/results?search_query=" + searchword + "\" target=\"_blank\">youtube : " + searchword + "</a>";
+
+                var element5 = document.getElementById('tiktok');
+                element5.innerHTML = "<a id= \"tiktoksearch\" href=\"https://www.tiktok.com/tag/" + searchword + "\">TikTok : " + searchword + "</a>";
             }
         }
     </script>
@@ -205,10 +208,11 @@
     </div>
 
     <div id="searchresult">
-        <div id="google"></div>
-        <div id="twitter"></div>
-        <div id="instagram"></div>
-        <div id="youtube"></div>
+        <div id="google"></div><br>
+        <div id="twitter"></div><br>
+        <div id="instagram"></div><br>
+        <div id="youtube"></div><br>
+        <div id="tiktok"></div>
     </div>
 </body>
 
