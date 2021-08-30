@@ -198,11 +198,15 @@
 
                 var element5 = document.getElementById('tiktok');
                 element5.innerHTML = "<a id= \"tiktoksearch\" href=\"https://www.tiktok.com/tag/" + searchword + "\">TikTok : " + searchword + "</a>";
+
+                var element6 = document.getElementById('note');
+                element5.innerHTML = "<a id= \"notesearch\" href=\"https://note.com/search?context=note&mode=search&q=" + searchword + "\">note : " + searchword + "</a>";
+
             }
         }
     </script>
     <div id="main">
-        <p id="title">Google twitter instagram youtube Search</p>
+        <p id="title">Google twitter instagram youtube tiktok note Search</p>
         <input type="search" name="search" id="search" placeholder="Search Word" autofocus><br>
         <p id="btn" onclick="search()">SEARCH</p>
     </div>
@@ -213,6 +217,7 @@
         <div id="instagram"></div><br>
         <div id="youtube"></div><br>
         <div id="tiktok"></div>
+        <div id="note"></div>
     </div>
 </body>
 
